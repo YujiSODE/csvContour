@@ -6,6 +6,7 @@
 *	See LICENSE or http://opensource.org/licenses/mit-license.php
 * ===================================================================
 * Characters list to text contour mapping
+* This is implementation of "contourChars.tcl" in JavaScript
 * --------------------------------------------------------------------
 *
 * === Synopsis ===
