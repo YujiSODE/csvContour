@@ -1,4 +1,4 @@
-#csvContour_sample.tcl
+#csvContour_sample01.tcl
 #sample codes for `csvContour.tcl`
 source -encoding utf-8 csvContour.tcl;
 #
@@ -16,4 +16,4 @@ append map "\n0,0,0,1,0,0,1,0,0,0";
 append map "\n0,0,0,0,1,1,0,0,0,0";
 append map "\n0,0,0,0,0,0,0,0,0,0";
 #
-puts stdout [csvContour $map 3];
+puts stdout [csvContour $map 0];
