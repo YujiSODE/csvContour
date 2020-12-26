@@ -6,7 +6,7 @@
 #	This software is released under the MIT License.
 #	See LICENSE or http://opensource.org/licenses/mit-license.php
 ##===================================================================
-#Tool to draw text contour map
+# Tool to draw text contour map
 #--------------------------------------------------------------------
 #
 #=== Synopsis ===
@@ -62,7 +62,6 @@ proc csvContour {csvMap {void 0.0}} {
 	# [c0|c1]
 	# [c2|c3]
 	#
-	#values: $c1,$c2 and $c3 = 0 or 1
 	#Vi = {$c0!=$ci?1:0}, and i = 1, 2 and 3
 	#rule: $rules(${V1}${V2}${V3})
 	#-----------------------------------------
