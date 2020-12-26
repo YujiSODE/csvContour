@@ -25,7 +25,6 @@ proc contourChars {} {
 	# [c0|c1]
 	# [c2|c3]
 	#
-	#values: $c1,$c2 and $c3 = 0 or 1
 	#v_i = {$c0!=$c_i?1:0}, and i = 1, 2 and 3
 	#rule: $rules(${v_1}${v_2}${v_3})
 	#-----------------------------------------
