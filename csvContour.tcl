@@ -6,7 +6,7 @@
 #	This software is released under the MIT License.
 #	See LICENSE or http://opensource.org/licenses/mit-license.php
 ##===================================================================
-#Tool to draw text contour map
+# Tool to draw text contour map
 #--------------------------------------------------------------------
 #
 #=== Synopsis ===
