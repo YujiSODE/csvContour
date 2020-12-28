@@ -1,4 +1,4 @@
-#csvCountour
+#csvContour
 #contourChars.tcl
 ##===================================================================
 #	Copyright (c) 2020 Yuji SODE <yuji.sode@gmail.com>
