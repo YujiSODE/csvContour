@@ -1,0 +1,114 @@
+<!--
+/*csvContour
+* index.html
+*===================================================================
+*	Copyright (c) 2020 Yuji SODE <yuji.sode@gmail.com>
+*
+*	This software is released under the MIT License.
+*	See LICENSE or http://opensource.org/licenses/mit-license.php
+*===================================================================
+*/
+-->
+<!-- This program is web version of 'csvContour'. -->
+<!-- Tool to draw text contour map. -->
+<!DOCTYPE html><html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<meta name='description' content="This program is web version of 'csvContour'. Tool to draw text contour map.">
+		<title>csvContour</title>
+		<!-- style -->
+		<style type='text/css'>
+			.csvContour{
+				border:1px solid #000f;
+				width:30vw;
+			}
+			textarea{
+				resize:both;
+				overflow:auto;
+			}
+		</style>
+		<script src='contourChars.js'></script>
+		<script src='csvContour.js'></script>
+	</head>
+	<body>
+		<h1>csvContour</h1>
+		<p>
+			This program is web version of <a href='https://github.com/YujiSODE/csvContour'>csvContour</a>.<br>
+			Tool to draw text contour map.
+		</p>
+		<!-- input -->
+		<div id='controls' class='csvContour'>
+			<div>
+				<label>
+					Input numerical <code>csv text</code> map, that is composed of numerical values, comma (,) and newline character<br>
+					(comment: a line begins with <code>#</code>)
+					<textarea id='csvInput'></textarea>
+				</label>
+			</div>
+			<!-- -->
+			<button type='button' id='convertB1'>Convert</button>
+			<button type='button' id='convertB2'>Convert (framed)</button>
+			<button type='button' id='resetB'>Clear</button>
+		</div>
+		<!-- output -->
+		<div id='divPre' class='csvContour'>
+			<pre id='mapResult'>=== RESULT ===</pre>
+		</div>
+		<footer>
+			<p>Copyright (c) 2020 Yuji SODE</p>
+			<a href='https://github.com/YujiSODE/csvContour'>GitHub</a>
+		</footer>
+		<script>
+			(function(){
+				var slf=window,csvMap='',target=slf.document.getElementById('mapResult');
+				//
+				//initial value: sample map
+				slf.document.getElementById('csvInput').value='#sample map\n0,0,0,0,0,0,1,2,2,2\n0,1,1,1,1,1,1,1,2,2\n0,1,1,1,2,2,1,1,1,2\n1,1,1,2,3,3,2,1,1,1\n1,1,2,3,4,4,3,3,1,1\n1,2,3,4,4,4,3,3,2,1\n1,2,3,3,4,4,3,3,2,1\n1,1,2,3,3,3,3,2,1,0\n0,1,1,2,3,3,2,1,0,0\n0,0,1,1,2,2,1,0,0,1\n0,0,0,1,1,1,0,0,1,1\n0,0,0,0,0,0,0,1,1,1';
+				//
+				//normal mapping
+				slf.document.getElementById('convertB1').addEventListener('click',()=>{
+					csvMap=slf.document.getElementById('csvInput').value.replace(/^\#.*$/m);
+					target.textContent=csvContour(csvMap,0);
+				},false);
+				//
+				//framed mapping
+				slf.document.getElementById('convertB2').addEventListener('click',()=>{
+					csvMap=slf.document.getElementById('csvInput').value.split(/^\#.*$/m).join('');
+					target.textContent=csvContour(csvMap,slf.Infinity);
+				},false);
+				//
+				//to reset
+				slf.document.getElementById('resetB').addEventListener('click',()=>{
+					slf.document.getElementById('csvInput').value='';
+					target.textContent='=== RESULT ===';
+				},false);
+			})();
+		</script>
+	</body>
+</html>
+<!-- /* csvContour/index.html */ -->
+<!-- /* This program is web version of 'csvContour'. */ -->
+<!-- /* Tool to draw text contour map. */ -->
+<!--/*
+*          MIT License
+*
+* Copyright (c) 2020 Yuji Sode
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*/-->
