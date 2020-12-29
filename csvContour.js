@@ -24,11 +24,16 @@ function csvContour(csvMap,VOID){
 	// - VOID: an optional value to express void, and 0.0 is default value
 	//======
 	VOID=!VOID?0.0:VOID;
-	var slf=this.window,d=csvMap.split(/\n/),map=[],c0=0,c1=0,c2=0,c3=0,h=d.length,w=d[0].split(/,/).length,x=0,y=0,rules={},R='';
+	var slf=this.window,d=csvMap.split(/\n/),map=[],c0=0,c1=0,c2=0,c3=0,h=d.length,w0=0,w=0,x=0,y=0,rules={},R='';
 	//
 	rules=contourChars();
 	//map is 2d array
 	while(y<h){
+		//
+		//estimating max width
+		w0=d[y].split(/,/).length;
+		w=w0>w?w0:w;
+		//
 		map.push(d[y].split(/,/));
 		y+=1;
 	};
@@ -62,6 +67,6 @@ function csvContour(csvMap,VOID){
 		y+=1;
 	};
 	//
-	slf=d=map=c0=c1=c2=c3=h=w=x=y=rules=null;
+	slf=d=map=c0=c1=c2=c3=h=w0=w=x=y=rules=null;
 	return R;
 }
