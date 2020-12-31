@@ -27,3 +27,4 @@ It requires Tcl 8.6+.
 ### JavaScript
 - [`csvContour.js`](csvContour.js): main script
 - [`contourChars.js`](contourChars.js): characters list to text contour mapping
+- [`index.html`](index.html): web version
