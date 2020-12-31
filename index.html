@@ -25,6 +25,8 @@
 			textarea{
 				resize:both;
 				overflow:auto;
+				width:20vw;
+				height:10vh;
 			}
 		</style>
 		<script src='contourChars.js'></script>
@@ -33,22 +35,23 @@
 	<body>
 		<h1>csvContour</h1>
 		<p>
-			This program is web version of <a href='https://github.com/YujiSODE/csvContour'>csvContour</a>.<br>
 			Tool to draw text contour map.
+			This program is web version of <a href='https://github.com/YujiSODE/csvContour'>csvContour</a>.<br>
 		</p>
 		<!-- input -->
 		<div id='controls' class='csvContour'>
 			<div>
 				<label>
 					Input numerical <code>csv text</code> map, that is composed of numerical values, comma (,) and newline character<br>
-					(comment: a line begins with <code>#</code>)
+					(comment: a line begins with <code>#</code>)<br>
 					<textarea id='csvInput'></textarea>
 				</label>
 			</div>
 			<!-- -->
 			<button type='button' id='convertB1'>Convert</button>
 			<button type='button' id='convertB2'>Convert (framed)</button>
-			<button type='button' id='resetB'>Clear</button>
+			<button type='button' id='clearB'>Clear</button>
+			<button type='button' id='resetB'>Reset</button>
 		</div>
 		<!-- output -->
 		<div id='divPre' class='csvContour'>
@@ -67,19 +70,25 @@
 				//
 				//normal mapping
 				slf.document.getElementById('convertB1').addEventListener('click',()=>{
-					csvMap=slf.document.getElementById('csvInput').value.replace(/^\#.*$/m);
+					csvMap=slf.document.getElementById('csvInput').value.replace(/^\#.*$/mg,'');
 					target.textContent=csvContour(csvMap,0);
 				},false);
 				//
 				//framed mapping
 				slf.document.getElementById('convertB2').addEventListener('click',()=>{
-					csvMap=slf.document.getElementById('csvInput').value.split(/^\#.*$/m).join('');
+					csvMap=slf.document.getElementById('csvInput').value.replace(/^\#.*$/mg,'');
 					target.textContent=csvContour(csvMap,slf.Infinity);
+				},false);
+				//
+				//to clear
+				slf.document.getElementById('clearB').addEventListener('click',()=>{
+					slf.document.getElementById('csvInput').value='';
+					target.textContent='=== RESULT ===';
 				},false);
 				//
 				//to reset
 				slf.document.getElementById('resetB').addEventListener('click',()=>{
-					slf.document.getElementById('csvInput').value='';
+					slf.document.getElementById('csvInput').value='#sample map\n0,0,0,0,0,0,1,2,2,2\n0,1,1,1,1,1,1,1,2,2\n0,1,1,1,2,2,1,1,1,2\n1,1,1,2,3,3,2,1,1,1\n1,1,2,3,4,4,3,3,1,1\n1,2,3,4,4,4,3,3,2,1\n1,2,3,3,4,4,3,3,2,1\n1,1,2,3,3,3,3,2,1,0\n0,1,1,2,3,3,2,1,0,0\n0,0,1,1,2,2,1,0,0,1\n0,0,0,1,1,1,0,0,1,1\n0,0,0,0,0,0,0,1,1,1';
 					target.textContent='=== RESULT ===';
 				},false);
 			})();
