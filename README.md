@@ -23,3 +23,7 @@ ______
 - [`contourChars.tcl`](contourChars.tcl): characters list to text contour mapping
 
 It requires Tcl 8.6+.
+
+### JavaScript
+- [`csvContour.js`](csvContour.js): main script
+- [`contourChars.js`](contourChars.js): characters list to text contour mapping
