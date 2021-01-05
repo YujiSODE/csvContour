@@ -20,7 +20,7 @@ Right down neighborhood was employed to detect area boundaries.
 - rule: _R_(_V_<sub>1</sub>,_V_<sub>2</sub>,_V_<sub>3</sub>)
 
 ### Boundaries
-Boundary is regarded as a fault line when values of two areas differ.
+Boundary is regarded as a fault line when values of two areas much differ from each other.
 
 ## 3. Script
 ### Tcl
