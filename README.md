@@ -19,6 +19,8 @@ Right down neighborhood was employed to detect area boundaries.
 - _V<sub>i</sub>_ = _c<sub>0</sub>_ != _c<sub>i</sub>_ ? 1 : 0, and _i_ = 1, 2 and 3
 - rule: _R_(_V<sub>1</sub>_,_V<sub>2</sub>_,_V<sub>3</sub>_)
 
+### Boundaries
+
 ## 3. Script
 ### Tcl
 - [`csvContour.tcl`](csvContour.tcl): main script
