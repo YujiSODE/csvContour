@@ -9,7 +9,9 @@ ______
 `csvContour` is tool to draw text contour map from a numerical csv text map, based on `right down neighborhood`.
 
 ## 2. Concept for `right down neighborhood` of cells
+Right down neighborhood was employed to detect area boundaries.
 
+### Right down neighborhood
     right down neighborhood: c0 and c1 to c3
     [c0|c1]
     [c2|c3]
