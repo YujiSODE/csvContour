@@ -6,7 +6,7 @@
 - [`README.md`] lines 22-23:
 
     ### Boundaries
-    Boundary is regarded as a fault line when values of two areas differ.
+    Boundary is regarded as a fault line when values of two areas much differ from each other.
 
 - [`README.md`] lines 12-14:
 
